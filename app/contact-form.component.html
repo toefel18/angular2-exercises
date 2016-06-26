@@ -1,0 +1,34 @@
+<form>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <!-- 
+            #firstName="ngForm"  will assign the control from the ngControl directive to the local variable firstName
+            this is angular syntax 
+         -->
+        <input 
+            ngControl="firstName" 
+            #firstName="ngForm" 
+            id="firstName" 
+            type="text" 
+            class="form-control"
+            required>
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            First name is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea 
+            ngControl="comment"
+            #comment="ngForm"
+            id="comment" 
+            cols="30" 
+            rows="10" 
+            class="form-control"
+            required ></textarea>
+            <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">
+                Comment is required
+            </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
