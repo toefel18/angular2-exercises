@@ -5,14 +5,14 @@
             #firstName="ngForm"  will assign the control from the ngControl directive to the local variable firstName
             this is angular syntax 
          -->
-        <input 
-            ngControl="firstName" 
-            #firstName="ngForm" 
-            id="firstName" 
-            type="text" 
-            class="form-control"
-            required
-            minlength="3">
+        <input
+                ngControl="firstName"
+                #firstName="ngForm"
+                id="firstName"
+                type="text"
+                class="form-control"
+                required
+                minlength="3">
         <div *ngIf="firstName.touched && firstName.errors">
             {{ firstName.errors | json }}
             <div class="alert alert-danger" *ngIf="firstName.errors.required">
@@ -21,21 +21,38 @@
             <div class="alert alert-danger" *ngIf="firstName.errors.minlength">
                 First name has a minimum length of {{ firstName.errors.minlength.requiredLength }}
             </div>
-        </div>    
+        </div>
     </div>
     <div class="form-group">
         <label for="comment">Comment</label>
-        <textarea 
-            ngControl="comment"
-            #comment="ngForm"
-            id="comment" 
-            cols="30" 
-            rows="10" 
-            class="form-control"
-            required ></textarea>
-            <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">
-                Comment is required
-            </div>
+        <textarea
+                ngControl="comment"
+                #comment="ngForm"
+                id="comment"
+                cols="30"
+                rows="10"
+                class="form-control"
+                required></textarea>
+        <div class="alert alert-danger" *ngIf="comment.touched && !comment.valid">
+            Comment is required
+        </div>
     </div>
+    <div class="form-group">
+        <label for="period">Period</label>
+        <select
+                ngControl="period"
+                #period="ngForm"
+                id="period"
+                class="form-control"
+                required>
+            <option value=""></option>
+            <option *ngFor="#period of periods" value="{{period.id}}">{{period.name}}</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="period.touched && !period.valid">
+            Period is required
+        </div>
+    </div>
+
+
     <button class="btn btn-primary" [disabled]="!form.valid" type="submit">Submit</button>
 </form> 

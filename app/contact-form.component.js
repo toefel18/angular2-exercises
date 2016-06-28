@@ -20,6 +20,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             ContactFormComponent = (function () {
                 function ContactFormComponent() {
+                    this.periods = [
+                        { id: 1, name: "Daily" },
+                        { id: 2, name: "Weekly" },
+                        { id: 3, name: "Montly" }
+                    ];
                 }
                 ContactFormComponent.prototype.log = function (variable) {
                     console.log(variable);
