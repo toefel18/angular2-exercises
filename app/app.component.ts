@@ -8,6 +8,8 @@ import {Tweet} from "./tweet";
 import {TwitterFeedComponent} from "./twitter-feed.component";
 import {ZippyComponent} from "./zippy.component";
 import {ContactFormComponent} from "./contact-form.component";
+import {SignUpFormComponent} from "./signup-form.component";
+import {ChangePasswordFormComponent} from "./change-password-form.component";
 
 @Component({
     selector: 'my-app',
@@ -21,10 +23,26 @@ import {ContactFormComponent} from "./contact-form.component";
         <twitter-feed [tweets]="tweets"></twitter-feed>
         <zippy title="Hello, here's my panel">Quontent</zippy>
         <zippy title="SecondPanel, here's my panel">Secundo Contento</zippy>
+        <h1>Template Driven Form</h1>
         <contact-form></contact-form>
+        
+        <br/>
+        <h1>Model Driven From</h1>
+        <signup-form></signup-form>
+        <h1>Exercise password validation form</h1>
+        <change-password></change-password>
     `,
     providers: [TwitterService],
-    directives: [AuthorComponent, FavouriteComponent, LikeComponent, VoteComponent, TwitterFeedComponent, ZippyComponent, ContactFormComponent]
+    directives: [
+        AuthorComponent,
+        FavouriteComponent,
+        LikeComponent,
+        VoteComponent,
+        TwitterFeedComponent,
+        ZippyComponent,
+        ContactFormComponent,
+        SignUpFormComponent,
+        ChangePasswordFormComponent]
 })
 export class AppComponent {
     tweets: Tweet[];

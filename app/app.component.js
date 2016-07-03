@@ -1,4 +1,4 @@
-System.register(['angular2/core', './authors.component', './favourite.component', "./like.component", "./vote.component", "./twitter.service", "./twitter-feed.component", "./zippy.component", "./contact-form.component"], function(exports_1, context_1) {
+System.register(['angular2/core', './authors.component', './favourite.component', "./like.component", "./vote.component", "./twitter.service", "./twitter-feed.component", "./zippy.component", "./contact-form.component", "./signup-form.component", "./change-password-form.component"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './authors.component', './favourite.component'
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, authors_component_1, favourite_component_1, like_component_1, vote_component_1, twitter_service_1, twitter_feed_component_1, zippy_component_1, contact_form_component_1;
+    var core_1, authors_component_1, favourite_component_1, like_component_1, vote_component_1, twitter_service_1, twitter_feed_component_1, zippy_component_1, contact_form_component_1, signup_form_component_1, change_password_form_component_1;
     var AppComponent;
     return {
         setters:[
@@ -40,6 +40,12 @@ System.register(['angular2/core', './authors.component', './favourite.component'
             },
             function (contact_form_component_1_1) {
                 contact_form_component_1 = contact_form_component_1_1;
+            },
+            function (signup_form_component_1_1) {
+                signup_form_component_1 = signup_form_component_1_1;
+            },
+            function (change_password_form_component_1_1) {
+                change_password_form_component_1 = change_password_form_component_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -49,9 +55,18 @@ System.register(['angular2/core', './authors.component', './favourite.component'
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>My First Angular Applicatie Jonge</h1> \n        <authors></authors> \n        <favourite></favourite>\n        <br>\n        <like [counter]=\"10\" [active]=\"true\"></like>\n        <vote [votes]=\"15\" [myVote]=\"-1\"></vote>\n        <twitter-feed [tweets]=\"tweets\"></twitter-feed>\n        <zippy title=\"Hello, here's my panel\">Quontent</zippy>\n        <zippy title=\"SecondPanel, here's my panel\">Secundo Contento</zippy>\n        <contact-form></contact-form>\n    ",
+                        template: "\n        <h1>My First Angular Applicatie Jonge</h1> \n        <authors></authors> \n        <favourite></favourite>\n        <br>\n        <like [counter]=\"10\" [active]=\"true\"></like>\n        <vote [votes]=\"15\" [myVote]=\"-1\"></vote>\n        <twitter-feed [tweets]=\"tweets\"></twitter-feed>\n        <zippy title=\"Hello, here's my panel\">Quontent</zippy>\n        <zippy title=\"SecondPanel, here's my panel\">Secundo Contento</zippy>\n        <h1>Template Driven Form</h1>\n        <contact-form></contact-form>\n        \n        <br/>\n        <h1>Model Driven From</h1>\n        <signup-form></signup-form>\n        <h1>Exercise password validation form</h1>\n        <change-password></change-password>\n    ",
                         providers: [twitter_service_1.TwitterService],
-                        directives: [authors_component_1.AuthorComponent, favourite_component_1.FavouriteComponent, like_component_1.LikeComponent, vote_component_1.VoteComponent, twitter_feed_component_1.TwitterFeedComponent, zippy_component_1.ZippyComponent, contact_form_component_1.ContactFormComponent]
+                        directives: [
+                            authors_component_1.AuthorComponent,
+                            favourite_component_1.FavouriteComponent,
+                            like_component_1.LikeComponent,
+                            vote_component_1.VoteComponent,
+                            twitter_feed_component_1.TwitterFeedComponent,
+                            zippy_component_1.ZippyComponent,
+                            contact_form_component_1.ContactFormComponent,
+                            signup_form_component_1.SignUpFormComponent,
+                            change_password_form_component_1.ChangePasswordFormComponent]
                     }), 
                     __metadata('design:paramtypes', [twitter_service_1.TwitterService])
                 ], AppComponent);

@@ -1,0 +1,33 @@
+<form [ngFormModel]="form" (ngSubmit)="signup()">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input
+                ngControl="username"
+                #username="ngForm"
+                id="username"
+                type="text"
+                class="form-control">
+
+            <!--long form, more readible to declare a variable #username and use that-->
+            <!--<div *ngIf="!form.controls['username'].valid" class="alert alert-danger">Username is required</div>-->
+        <div *ngIf="username.control.pending">Checking for uniqueness...</div> <!-- when async validators are running, the control is in pending state! -->
+        <div *ngIf="username.touched && username.errors">
+            <div *ngIf="username.errors.required" class="alert alert-danger">Username is required</div>
+            <div *ngIf="username.errors.cannotContainSpace" class="alert alert-danger">Username cannot contain space</div>
+            <div *ngIf="username.errors.shouldBeUnique" class="alert alert-danger">Username must be unique</div>
+            <div *ngIf="username.errors.invalidLogin" class="alert alert-danger">Username or password is invalid</div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input
+                ngControl="password"
+                #password="ngForm"
+                id="password"
+                type="text"
+                class="form-control">
+        <div *ngIf="!password.valid" class="alert alert-danger">Password is required</div>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+</form>
